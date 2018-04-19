@@ -14,8 +14,7 @@ input.addEventListener("keyup", function () {
         let body = Object.keys(params)
             .map(function (prop) {
                 return prop + '=' + params[prop];
-            })
-            .join('&');
+            }).join('&');
 
         let http = new XMLHttpRequest();
         http.open('POST', 'https://en.wikipedia.org/w/api.php');
