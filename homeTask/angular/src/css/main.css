@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.wrapper {
+    margin-top: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-mod {
+    margin-left: 10px;
+    width: 100px;
+}
+

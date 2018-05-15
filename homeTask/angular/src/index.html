@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>My angular app</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+
+    <script src="./js/angular.js"></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+<div class="wrapper" ng-class="{'app-loaded': true}">
+
+
+    <div class="container">
+
+        <div ng-controller="PageController as page" class="filters">
+            <div ng-repeat="button in page.buttons" >
+                <button class="btn btn-primary btn-mod">{{button}}</button>
+            </div>
+        </div>
+
+
+        <div ng-controller="ProductsController as products">
+            <div ng-repeat-start="product in products.products" class="row">
+                <h2 class="col-md-12">{{ product.name }}</h2>
+                <img class="col-md-3" src="{{product.img}}" alt="">
+                <p class="col-md-6">{{ product.description }}</p>
+                <div class="col-md-3">
+                    <h2>${{ product.price }}</h2>
+                    <button class="btn btn-primary" ng-show="product.canPurchase">Купить</button>
+                </div>
+            </div>
+            <hr ng-repeat-end ng-hide="$last"/>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
